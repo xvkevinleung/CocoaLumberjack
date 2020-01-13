@@ -96,16 +96,16 @@ static DDOSLogger *sharedInstance;
             __auto_type logger = [self logger];
             switch (logMessage->_flag) {
                 case DDLogFlagError     :
-                    os_log_error(logger, "%{public}s", msg);
+                    os_log(logger, "%{public}s", msg);
                     break;
                 case DDLogFlagWarning   :
                 case DDLogFlagInfo      :
-                    os_log_info(logger, "%{public}s", msg);
+                    os_log(logger, "%{public}s", msg);
                     break;
                 case DDLogFlagDebug     :
                 case DDLogFlagVerbose   :
                 default                 :
-                    os_log_debug(logger, "%{public}s", msg);
+                    os_log(logger, "%{public}s", msg);
                     break;
             }
         }
